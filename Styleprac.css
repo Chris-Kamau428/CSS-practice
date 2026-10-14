@@ -1,0 +1,190 @@
+body {
+background-image: url(bg-image.jpg);
+background-position: center;
+background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /*used to stretch the background throughout the whole web page*/
+    color: black;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.odd {
+     background:linear-gradient(to left, rgba(135, 206, 235,0.3),transparent); /* brings up a gradient of different colors and the direction*/
+  border-style: outset;
+  border-color: blue;
+border-radius: 4px;
+color: lightskyblue;
+}
+.even {
+    background:linear-gradient(to left, rgba(135, 206, 235,0.6),transparent) ;
+  border-radius: 4px;
+  border: solid; /*brings out a strong border */
+  border-style:outset; /* styling the border, you can also use:inset/outset/dotted/dashed or double*/
+  border-color: black; /*Gives the border a color*/
+  color: lightskyblue; /*gives the text color*/
+}
+h1 {
+    font-family:Isometra, sans-serif ;
+    color: white;
+}
+p {
+    font-family: consolas,sans-serif;
+    font-style:oblique; /*Adds some style to the text, though not really neccessary*/
+    font-weight: bold; 
+    text-decoration:dotted underline; /*Basically an underlining element*/
+}
+.Box {
+border: 5px solid;
+width: 250px;
+height: 250px;
+font-size: 15px;
+ background:linear-gradient(to left, rgba(135, 206, 235,0.6),transparent) ;
+  border-radius: 4px;
+  margin-left: 10px; /*margin from the edge of the web page*/
+  text-align: center;
+  float:left; /*makes the boxes to be pushed to the left in this case,
+  and pushed to right if the float is directed to right*/
+}
+p {
+    clear: left; /*used to take the text below the <div> elements to decompress them.
+    TRY TO CUT IT AND RUN AND SEE WHAT HAPPENS!!*/
+}
+h2 {
+    color: aliceblue;
+    font-family: Black ops One regular,sans-serif;
+}
+/*Pseudoclasses*/
+a:link { /* using the '::link' pseudocode, anything that is a link will be affected 
+    on this web page*/
+    color: red; /* the original color of the link*/
+    font-size: 36px;
+}
+a:visited {
+    color: gray; /* the color of the link if the link has ever been opened*/
+}
+a:hover {
+    color: blue; /* when hovered with a cursor*/
+}
+a:active {
+    color: yellow; /*when the link is long pressed*/
+}
+button:hover {
+    color:tomato
+}
+button:active {
+    background-color: blue;
+}
+/*
+li:nth-child(3n+2){  
+background-color: yellow;
+}
+So, here, all the characters on the list are siblings,
+and all are children of parent 'li'. So, the background color applies to the number of 
+ the child that is put in the brackets after the 'nth-child'
+ In the brackets you can also add two eg. (3n+2) and so,
+ For:
+  '3n'- all multiples of 3 will be highlighted
+  the '+2' enables one to pass 2 numbers after the multiple of 3  that was supposed to be highlighted*/
+
+li:nth-child(odd){
+    background-color: blue;
+}
+li:nth-child(even) {
+    background-color: yellow
+}
+#shadow {
+    text-shadow: 0px 0px 5px yellow, 0px 0px 7px red;
+}
+#shadow:hover {
+ box-shadow: 5px 5px 9px black;
+}
+#box10 {
+    border:4px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 225px;
+    text-align: center;
+    background-color: lightskyblue;
+    
+    /*
+    transform: translateX(50px);  - moves the box to the left/right
+    transform: translateY(50px);  - movesthe box up and down
+    */
+    transform: translate(50px, 50px);  /*instead of writing the two translate X and Y, it combines them together*/
+                                       /* The first value is for translateX and the other is for translateY*/
+    /*                                   
+    transform: rotateX(180deg); -rotates the box clockwise
+    transform: rotateY(180deg); -rotates the box anti-clockwise
+    */
+transform: rotateZ(0deg); /* The combination of rotateX and rotateY*/
+/*
+transform: scaleX(2); -stretches the box horizontally
+transform: scaleY(2); -stretches the box vertically
+*/
+transform: scale(2, 2);  /* The combination of scaleX and scaleY*/
+/*
+    transform: skewX(45deg); -Tilts the box to the right/left
+    transform: skewY(45deg); -Tilts the box vertically
+    */
+    transform: skew(0deg, 0deg); /*The combination of skewX /skewY */
+
+    transform: matrix(2,0,2,250,250);
+    /*
+    matrix combines the following in order:
+    
+    scaleX(),
+    skewY(),
+    skewX(),
+    scaleY(),
+    translateX(),
+    translateY(),
+*/
+}
+#box11 {
+    width: 250px;
+    height: 250px;
+    background-color: chartreuse;
+    font-size: 225px;
+    text-align: center;
+/*
+    animation: myslide; -This is name given to the animation
+    animation-play-state: running; -The functionaliy of the animation
+    animation-delay: 0s; -Time before the beginning of the animation
+    animation-iteration-count: infinite; -Looping of the animation
+    animation-duration: 5s; - Animation time 
+    animation-timing-function: linear; Animation speed
+    */
+}
+#box11:active{ /*animation begins after being long pressed*/
+ animation: 3s linear 0s infinite running myslide;  /*brings all of the animation elements together*/
+}
+
+
+@keyframes myslide { /*give the animation a unique name e.g 'myslide'*/
+    from{margin-left: 10%;}
+    to{margin-left: 100%;}
+}
+/* Other animations:
+  100%{transform:rotateX(360deg)}
+  100%{transform:rotate(360deg)}
+
+  50% {transform:scale(0.5, 0.5)}
+
+  0%{background-color: red;}
+  20%{background-color: orange;}
+  40%{background-color: yellow;}
+  60%{background-color: green;}  e.t.c
+  80%{background-color: blue;}
+  100%{background-color: purple;}
+  */
+  .loader.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #1e1e2f;
+    border-top-color:#6366f1 ;
+    animation:spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to {transform: rotate(360deg);}
+  }
